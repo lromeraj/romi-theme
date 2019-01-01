@@ -1,0 +1,16 @@
+#!/bin/bash
+
+source .src
+
+info "enabling extensions...\n"
+for ext_name in `ls .extensions/`
+do
+  printf "${Green}enabling: ${BPurple}$ext_name${NC}... "
+  gnome-shell-extension-tool -e $ext_name &> /dev/null
+
+  if [ $? -eq 0 ]; then
+    printf "${Green}success${NC}\n"
+  else
+    printf "${Yellow}already enabled${NC}\n"
+  fi
+done

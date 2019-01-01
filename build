@@ -1,0 +1,39 @@
+#!/bin/bash
+
+source .src
+
+printf "${BPurple}builder${NC}@${BCyan}v0.0.5${NC} by ${Yellow}@lromeraj${NC}\n"
+
+info "building dirs...\n"
+mkdir -p .icons/
+mkdir -p .gtk/
+mkdir -p .gdm/
+mkdir -p wallpapers/
+
+info "copying GTK+ theme...\n"
+cp -r /usr/share/themes/Romi ./.gtk/
+
+info "copying icons...\n"
+cp -r /usr/share/icons/{Romi,Numix-Circle} ./.icons/
+
+info "copying shell theme...\n"
+cp /etc/alternatives/gdm3.css ./.gdm/gnome-shell.css
+
+info "copying wallpapers...\n"
+cp /usr/share/backgrounds/gdmlock.jpg ./wallpapers/.gdmlock_def.jpg
+cp /usr/share/backgrounds/desktop.jpg ./wallpapers/.desktop_def.jpg
+
+info "packing...\n"
+zip -r Romi_theme_`grep -Po '^v([0-9]).*' CHANGELOG`_`date '+%d%m%Y'`.zip \
+.icons/ \
+.gtk/ \
+.gdm/ \
+.dconf \
+.extensions/ \
+wallpapers/ \
+README \
+CHANGELOG \
+installit \
+.src
+
+success "all done!\n"

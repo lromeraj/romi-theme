@@ -1,0 +1,7 @@
+#!/bin/bash
+
+source .src
+
+info "Cleaning...\n"
+
+rm -rf .gtk/ .gdm/ .icons/ wallpapers/

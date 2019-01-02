@@ -34,14 +34,6 @@ then
   echo
 fi
 
-warn "¿read README?"
-if [ `prompt` -eq 1 ]
-then
-  echo
-  cat README | more -5
-  echo
-fi
-
 printf "Install ${BPurple}Romi${NC} theme?"
 if [ `prompt` -eq 0 ]
 then

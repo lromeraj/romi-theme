@@ -20,6 +20,7 @@ In a few seconds you'll be enjoying the theme...
 
 > NOTE: after theme installation a reboot is recommended.
 
+## Customization
 
 Remember that this script will set up default Romi theme's backgrounds,
 if you want your own backgrounds you should copy to the wallpapers folder

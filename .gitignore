@@ -1,5 +1,0 @@
-*.zip
-build
-clean
-test
-.gitignore

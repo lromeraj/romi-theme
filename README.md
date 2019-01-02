@@ -1,4 +1,4 @@
-#Romi Theme
+# Romi Theme
 
 This script has been developed to install Romi theme, by following
 this script will change the majority of your current design:

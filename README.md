@@ -24,7 +24,13 @@ In a few seconds you'll be enjoying the theme...
 
 ## Preview
 
-
+![](img/dock.gif)
+![](img/nautilus.gif)
+![](img/setts.gif)
+![](img/net-dialog.gif)
+![](img/calendar.gif)
+![](img/net-dialog.gif)
+![](img/quick-menu.gif)
 
 ## Customization
 

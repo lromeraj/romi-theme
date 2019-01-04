@@ -34,8 +34,6 @@ In a few seconds you'll be enjoying the theme...
 
 ![](img/calendar.gif)
 
-![](img/net-dialog.gif)
-
 ![](img/quick-menu.gif)
 
 ## Customization

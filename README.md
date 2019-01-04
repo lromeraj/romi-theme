@@ -18,7 +18,7 @@ $ ./installit
 ```
 In a few seconds you'll be enjoying the theme...
 
-[[https://github.com/lromeraj/romi-theme/blob/master/img/installer.gif|alt=installer]]
+[[https://github.com/lromeraj/romi-theme/blob/master/img/installer.gif]]
 
 > NOTE: after theme installation a reboot is recommended.
 
@@ -36,6 +36,7 @@ it will look for the same files inside ```/usr/share/backgrounds/```
 else the installer will use your own custom backgrounds.
 
 > gdmlock.jpg => lock screen background
+
 > desktop.jpg => desktop background
 
 If the installer finds ```gdmlock.jpg``` and ```desktop.jpg``` inside

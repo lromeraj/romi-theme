@@ -18,17 +18,28 @@ $ ./installit
 ```
 In a few seconds you'll be enjoying the theme...
 
+[[https://github.com/lromeraj/romi-theme/blob/master/img/installer.gif|alt=installer]]
+
 > NOTE: after theme installation a reboot is recommended.
+
+## Preview
+
+
 
 ## Customization
 
-Remember that this script will set up default Romi theme's backgrounds,
-if you want your own backgrounds you should copy to the wallpapers folder
-your custom backgrounds:
+### Backgrounds
 
-gdmlock.jpg => For lock screen background
-desktop.jpg => For desktop background
+The installer will look for ```gdmlock.jpg``` and ```desktop.jpg```
+inside ```wallpapers/``` folder, if installer does not find anything,
+it will look for the same files inside ```/usr/share/backgrounds/```
+else the installer will use your own custom backgrounds.
 
-It is important that the name of the files has to match exactly as indicated above
+> gdmlock.jpg => lock screen background
+> desktop.jpg => desktop background
 
-NOTE: if no background is defined, default theme backgrounds will be used
+If the installer finds ```gdmlock.jpg``` and ```desktop.jpg``` inside
+```/usr/share/backgrounds/``` **it will not do anything with the wallpapers**,
+else the installer will copy the default theme's backgrounds.
+
+> NOTE: it is important that the name of the files has to match exactly as indicated above.

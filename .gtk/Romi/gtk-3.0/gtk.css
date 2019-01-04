@@ -100,7 +100,8 @@ iconview:disabled, window#gnome-system-monitor.background.csd stack scrolledwind
 }
 
 textview text {
-  background-color: #3a3f3e;
+  background-color: #364759;
+  border-radius: 7px;
 }
 
 textview border {
@@ -120,7 +121,7 @@ treeview.view rubberband,
 .content-view .rubberband,
 XfdesktopIconView.view .rubberband {
   border: 1px solid #FFAC00;
-  background-color: rgba(255, 172, 0, 0.3);
+  background-color: rgba(255, 172, 0, 1);
 }
 
 flowbox flowboxchild {
@@ -210,8 +211,8 @@ spinbutton:not(.vertical),
 entry {
   min-height: 32px;
   padding: 0 8px;
-  border-radius: 10px 10px 0 0;
-  transition: all 150ms cubic-bezier(0, 0, 0.2, 1), box-shadow 100ms cubic-bezier(0, 0, 0.2, 1);
+  border-radius: 8px 8px 0 0;
+  transition: all 300ms;
   border-image: none;
   border-bottom: 3px solid #FFAC00;
   box-shadow: none;
@@ -228,8 +229,9 @@ entry:focus {
 spinbutton:disabled:not(.vertical),
 entry:disabled {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.12);
-  background-color: #3a3f3e;
-  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.4);
+  border-bottom-color: rgba(255, 172, 0, 0.4);
 }
 
 spinbutton.flat:not(.vertical), popover.background entry, notebook > stack:not(:only-child) entry:not(.search),
@@ -237,19 +239,18 @@ notebook > stack:not(:only-child) spinbutton:not(.vertical), messagedialog entry
 .budgie-popover spinbutton:not(.vertical), .raven .raven-background spinbutton:not(.vertical), #login_window entry,
 entry.flat {
   border-radius: 0;
-  transition: all 150ms cubic-bezier(0, 0, 0.2, 1);
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #FFAC00 0%, transparent 0%) 0 0 0/0 0 0px;
-  box-shadow: inset 0 -1px rgba(255, 255, 255, 0.3);
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 0px), #FFAC00 0%, transparent 0%) 0 0 2/0 0 0px;
+  box-shadow: inset 0 -2px rgba(255, 255, 255, 0.3);
   background-color: transparent;
-  color: #FFFFFF;
+  color: #fff;
 }
 
 spinbutton.flat:focus:not(.vertical), popover.background entry:focus, notebook > stack:not(:only-child) entry:focus:not(.search),
 notebook > stack:not(:only-child) spinbutton:focus:not(.vertical), messagedialog entry:focus, colorchooser .popover.osd spinbutton:focus:not(.vertical), entry.preferences-search:focus, layoutpane entry.search:focus, editortweak entry.search:focus, window#whiskermenu-window entry:focus, .budgie-popover entry:focus,
 .budgie-popover spinbutton:focus:not(.vertical), .raven .raven-background spinbutton:focus:not(.vertical), #login_window entry:focus,
 entry.flat:focus {
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #FFAC00 100%, transparent 0%) 0 0 2/0 0 2px;
-  box-shadow: inset 0 -1px rgba(255, 255, 255, 0.3);
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 3px), #FFAC00 100%, transparent 0%) 0 0 2/0 0 3px;
+  box-shadow: inset 0 -2px rgba(255, 172, 0, 1);
 }
 
 spinbutton.flat:disabled:not(.vertical), popover.background entry:disabled, notebook > stack:not(:only-child) entry:disabled:not(.search),
@@ -1220,7 +1221,7 @@ toolbar:not(.inline-toolbar):not(.osd) switch {
   border-style: solid;
   border-width: 0 1px 1px;
   border-color: rgba(255, 255, 255, 0.08);
-  background-color: #3a3f3e;
+  background-color: #42576D;
 }
 
 searchbar,
@@ -1277,7 +1278,7 @@ headerbar .subtitle {
 
 .titlebar:not(headerbar) entry,
 headerbar entry {
-  background-color: #4b5251;
+  background-color: #42576D;
 }
 
 .titlebar:not(headerbar) entry:focus,
@@ -1772,8 +1773,8 @@ headerbar:dir(ltr) {
 headerbar entry,
 headerbar spinbutton,
 headerbar button {
-  margin-top: 4px;
-  margin-bottom: 4px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 headerbar switch {
@@ -1858,6 +1859,9 @@ headerbar separator.titlebutton {
   border: none;
 }
 
+widnow.csd > headerbar {
+  padding: 10px;
+}
 window.csd > .titlebar:not(headerbar) {
   padding: 0;
   background-color: transparent;
@@ -2617,17 +2621,17 @@ scrollbar.overlay-indicator:not(.dragging):not(.hovering) {
 }
 
 scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider {
-  min-width: 4px;
-  min-height: 4px;
+  min-width: 5px;
+  min-height: 10px;
   margin: 3px;
-  border: 1px solid rgba(63, 69, 68, 0.3);
+  border: none;
 }
 
 scrollbar.overlay-indicator:not(.dragging):not(.hovering) button {
   min-width: 4px;
   min-height: 4px;
   margin: 3px;
-  border: 1px solid rgba(63, 69, 68, 0.3);
+  border: none;
   border-radius: 9999px;
   background-color: rgba(255, 255, 255, 0.5);
   background-clip: padding-box;
@@ -3356,7 +3360,8 @@ progressbar trough.empty progress {
  * Level Bar *
  *************/
 levelbar.horizontal block {
-  min-height: 4px;
+  min-height: 10px;
+  border-radius: 10px;
 }
 
 levelbar.horizontal.discrete block {
@@ -3380,26 +3385,26 @@ levelbar.vertical.discrete block:not(:last-child) {
 }
 
 levelbar trough {
-  padding: 2px;
-  border-radius: 6px;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.12);
+  padding: 0px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
   background-color: #42576D;
 }
 
 levelbar trough:disabled {
-  background-color: #3a3f3e;
+  background-color: #364759;
 }
 
 levelbar block.low {
-  background-color: #FF6D00;
+  background-color: #D3522E;
 }
 
 levelbar block.high, levelbar block:not(.empty) {
-  background-color: #FFAC00;
+  background-color: #AFD32E;
 }
 
 levelbar block.full {
-  background-color: #08D09C;
+  background-color: #2ED370;
 }
 
 levelbar block.empty {
@@ -3749,16 +3754,16 @@ filechooserbutton:drop(active) {
  ***********/
 .sidebar {
   border-style: none;
-  background-color: #4c5351;
+  background-color: #42576D;
 }
 
 stacksidebar.sidebar:dir(ltr) list, stacksidebar.sidebar.left list, stacksidebar.sidebar.left:dir(rtl) list, .sidebar:dir(ltr), .sidebar.left, .sidebar.left:dir(rtl) {
-  border-right: 0px solid #474e4d;
+  border-right: 10px solid #474e4d;
   border-left-style: none;
 }
 
 stacksidebar.sidebar:dir(rtl) list, stacksidebar.sidebar.right list, .sidebar:dir(rtl), .sidebar.right {
-  border-left: 1px solid #474e4d;
+  border-left: 10px solid #474e4d;
   border-right-style: none;
 }
 
@@ -4978,7 +4983,7 @@ filechooser placessidebar.sidebar row.sidebar-row:selected:hover,
 }
 
 .gedit-document-panel {
-  background-color: #4c5351;
+  background-color: #42576D;
 }
 
 .gedit-document-panel row button.flat {
@@ -5250,7 +5255,7 @@ entry.preferences-search {
 }
 
 preferences stacksidebar.sidebar list {
-  background-color: #4c5351;
+  background-color: #394B5E;
 }
 
 preferences stacksidebar.sidebar:dir(ltr) list, preferences stacksidebar.sidebar:dir(rtl) list {
@@ -5555,7 +5560,7 @@ overlay grid.horizontal > revealer > scrolledwindow.frame:dir(rtl) {
 }
 
 .side-panel .view {
-  background-image: image(#4c5351);
+  background-image: image(#394B5E);
 }
 
 .side-panel .view:hover {
@@ -5775,11 +5780,12 @@ task-list-view > box > revealer > box > button {
 /*******
  * eog *
  *******/
+
 #eog-thumb-nav scrolledwindow {
   border-top: none;
 }
 
-#eog-thumb-nav button {
+#eog-thumb-nav headerbar * {
   -gtk-outline-radius: 6px;
 }
 
@@ -5809,7 +5815,7 @@ box.dialog-vbox scrolledwindow.related {
 }
 
 list.categories {
-  background-image: image(#4c5351);
+  background-image: image(#394B5E);
 }
 
 /*********
@@ -5820,7 +5826,7 @@ list.categories {
   padding: 0 4px;
   border-radius: 3px;
   background-color: rgba(0, 0, 0, 0.3);
-  color: #FFFFFF;
+  color: #fff;
 }
 
 /**************
@@ -5874,7 +5880,7 @@ overlay > revealer.right > scrolledwindow.frame {
 
 .terminix-session-sidebar,
 .tilix-session-sidebar {
-  background-image: image(#4c5351);
+  background-image: image(#394B5E);
 }
 
 button.image-button.session-new-button {
@@ -7774,7 +7780,7 @@ box.vertical > stack > box.vertical .raven-background > viewport.frame .budgie-m
 .budgie-polkit-dialog,
 .budgie-session-dialog, .budgie-run-dialog {
   border-radius: 6px;
-  background-color: #4c5351;
+  background-color: #394B5E;
 }
 
 .budgie-polkit-dialog decoration, .budgie-session-dialog decoration, .budgie-run-dialog decoration {
@@ -7983,7 +7989,7 @@ menubar.-vala-panel-appmenu-private > menuitem > window.background.popup > menu 
   margin: 8px;
   border-radius: 6px;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1), 0 3px 3px rgba(0, 0, 0, 0.15), inset 0 1px rgba(255, 255, 255, 0.1);
-  background-color: #4c5351;
+  background-color: #394B5E;
 }
 
 #content_frame {

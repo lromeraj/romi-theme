@@ -25,15 +25,6 @@ fi
 
 printf "${BPurple}installer${NC}@${BCyan}v1.0.1${NC} by ${Yellow}@lromeraj${NC}\n"
 
-
-warn "¿read CHANGELOG?"
-if [ `prompt` -eq 1 ]
-then
-  echo
-  cat ./CHANGELOG | more -5
-  echo
-fi
-
 printf "Install ${BPurple}Romi${NC} theme?"
 if [ `prompt` -eq 0 ]
 then
@@ -42,12 +33,12 @@ then
 fi
 
 echo
-warn "this script needs root privilegies for the execution of certain sentences\n"
 
 # check if sudo command can be used without password
 if [ sudo -n true 2>/dev/null ]; then
     warn "sudo available, skipping password input...\n"
 else
+  warn "root access is required for install\n"
   sudo echo "" > /dev/null
 fi
 
@@ -56,6 +47,7 @@ info "loading wallpapers...\n"
 #initialize array
 typeset -A WALLS
 
+# wallpapers
 WALLS=(
   [desktop]="desktop.jpg"
   [lock_screen]="gdmlock.jpg"
@@ -69,9 +61,7 @@ do
   if [ -e ./wallpapers/$fileN ]
   then
     info "using custom wallpaper $fileN\n"
-
     printf "Do you want to blur it?"
-
     if [[ `prompt` -eq 1 ]]
     then
       blur ./wallpapers/$fileN
@@ -113,13 +103,16 @@ info "copying wallpapers...\n"
 sudo mv ./wallpapers/gdmlock.jpg ./wallpapers/desktop.jpg /usr/share/backgrounds/
 
 info "installing icons...\n"
-sudo cp -r ./.icons/* /usr/share/icons/
+sudo cp -r .icons/* /usr/share/icons/
 
-info "installing GTK+ theme...\n"
-sudo cp -r ./.gtk/* /usr/share/themes/
+info "installing apps theme...\n"
+sudo cp -r .gtk/* /usr/share/themes/
+
+info "installing schemes...\n"
+sudo cp .schemes/* /usr/share/gtksourceview-3.0/styles/
 
 info "installing shell theme...\n"
-sudo cp ./.gdm/gnome-shell.css /etc/alternatives/gdm3.css
+sudo cp .gdm/gnome-shell.css /etc/alternatives/gdm3.css
 
 info "installing dependency extensions...\n"
 mkdir -p ~/.local/share/gnome-shell/extensions/
@@ -143,6 +136,9 @@ dconf reset -f /org/gnome/terminal/
 
 info "updating dconf database...\n"
 cat ./.dconf | dconf load /
+
+info "restarting shell...\n"
+_rshell # restart shell
 
 success "all done\n"
 

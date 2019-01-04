@@ -1,10 +1,32 @@
+[org/gnome/gedit/preferences/editor]
+scheme='romi'
+highlight-current-line=true
+background-pattern='none'
+display-line-numbers=true
+
 [org/gnome/desktop/interface]
 icon-theme='Romi'
 enable-animations=true
 gtk-theme='Romi'
 
+[org/gnome/shell]
+disable-user-extensions=false
+
 [org/gnome/shell/extensions/user-theme]
 name='Romi'
+
+[org/gnome/shell/extensions/dash-to-dock]
+extend-height=false
+running-indicator-dominant-color=true
+animation-time=0.29999999999999999
+scroll-action='switch-workspace'
+dock-position='BOTTOM'
+preferred-monitor=0
+icon-size-fixed=false
+running-indicator-style='SEGMENTED'
+dash-max-icon-size=55
+transparency-mode='FIXED'
+
 
 [org/gnome/desktop/background]
 picture-uri='file:///usr/share/backgrounds/desktop.jpg'

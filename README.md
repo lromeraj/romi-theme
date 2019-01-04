@@ -18,7 +18,7 @@ $ ./installit
 ```
 In a few seconds you'll be enjoying the theme...
 
-[[https://github.com/lromeraj/romi-theme/blob/master/img/installer.gif]]
+![](img/installer.gif)
 
 > NOTE: after theme installation a reboot is recommended.
 

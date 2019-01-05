@@ -103,10 +103,10 @@ info "copying wallpapers...\n"
 sudo mv ./wallpapers/gdmlock.jpg ./wallpapers/desktop.jpg /usr/share/backgrounds/
 
 info "installing icons...\n"
-sudo cp -r .icons/* /usr/share/icons/
+sudo cp -fr .icons/* /usr/share/icons/
 
 info "installing apps theme...\n"
-sudo cp -r .gtk/* /usr/share/themes/
+sudo cp -fr .gtk/* /usr/share/themes/
 
 info "installing schemes...\n"
 sudo cp .schemes/* /usr/share/gtksourceview-3.0/styles/
@@ -116,7 +116,7 @@ sudo cp .gdm/gnome-shell.css /etc/alternatives/gdm3.css
 
 info "installing dependency extensions...\n"
 mkdir -p ~/.local/share/gnome-shell/extensions/
-cp -r .extensions/* ~/.local/share/gnome-shell/extensions/
+cp -fr .extensions/* ~/.local/share/gnome-shell/extensions/
 
 info "enabling extensions...\n"
 for ext_name in `ls .extensions/`

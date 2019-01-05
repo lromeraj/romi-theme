@@ -64,7 +64,7 @@ notebook:focus tab,
 }
 
 .gtkstyle-fallback {
-  background-color: #343938;
+  background-color: red;
   color: #FFFFFF;
 }
 
@@ -79,7 +79,7 @@ notebook:focus tab,
 }
 
 .gtkstyle-fallback:disabled {
-  background-color: #343938;
+  background-color: red;
   color: rgba(255, 255, 255, 0.5);
 }
 
@@ -120,8 +120,9 @@ treeview.view rubberband,
 .content-view rubberband,
 .content-view .rubberband,
 XfdesktopIconView.view .rubberband {
-  border: 1px solid #FFAC00;
-  background-color: rgba(255, 172, 0, 1);
+  border: 0px solid transparent;
+  border-radius: 10px !important;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 flowbox flowboxchild {
@@ -1157,7 +1158,7 @@ popover.background button.combo:disabled, notebook > stack:not(:only-child) butt
 toolbar {
   -GtkWidget-window-dragging: true;
   padding: 2px;
-  background-color: #343938;
+  background-color: #42576D;
 }
 
 .osd toolbar {
@@ -1737,9 +1738,9 @@ headerbar.default-decoration {
 
 .default-decoration.titlebar:not(headerbar) button.titlebutton,
 headerbar.default-decoration button.titlebutton {
-  min-height: 16px;
-  min-width: 16px;
-  margin: 0 2px;
+  min-height: 15px;
+  min-width: 15px;
+  margin: 6px 2px;
   padding: 0;
 }
 
@@ -1789,8 +1790,8 @@ headerbar spinbutton button {
 
 .titlebar,
 .titlebar .background {
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .background.tiled .titlebar,
@@ -1806,16 +1807,16 @@ headerbar spinbutton button {
 
 window separator:first-child + headerbar,
 window headerbar:first-child {
-  border-top-left-radius: 15px;
+  border-top-left-radius: 20px;
 }
 
 window headerbar:last-child {
-  border-top-right-radius: 15px;
+  border-top-right-radius: 20px;
 }
 
 window stack headerbar:first-child, window stack headerbar:last-child {
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 window.tiled headerbar, window.tiled headerbar:first-child, window.tiled headerbar:last-child, window.tiled headerbar:only-child,
@@ -2136,7 +2137,7 @@ menu menuitem,
   font: initial;
   text-shadow: none;
   transition-property: margin;
-  transition-duration: 100ms;
+  transition-duration: 200ms;
 }
 
 menu menuitem:hover,
@@ -3688,10 +3689,10 @@ messagedialog.background {
 }
 
 messagedialog .titlebar {
-  min-height: 20px;
+  min-height: 30px;
   border-style: none;
-  box-shadow: none;
   background-color: #42576D;
+  box-shadow: none;
   color: #fff;
 }
 
@@ -3701,8 +3702,9 @@ messagedialog .titlebar:backdrop {
 
 messagedialog .dialog-action-area button {
   padding: 4px 12px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 3px solid rgba(255, 255, 255, 0.07);
   border-radius: 0;
+  outline: none;
 }
 
 messagedialog .dialog-action-area button:first-child {
@@ -3716,13 +3718,13 @@ messagedialog .dialog-action-area button:last-child {
 }
 
 messagedialog.csd.background {
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 
 messagedialog.csd .dialog-action-area button {
-  padding: 8px 16px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 10px 16px;
+  border-top: 3px solid rgba(255, 255, 255, 0.07);
   border-radius: 0;
 }
 
@@ -4104,7 +4106,7 @@ colorchooser .popover.osd:backdrop {
  **********************/
 decoration {
   transition: box-shadow 100ms cubic-bezier(0, 0, 0.2, 1);
-  border-radius: 15px;
+  border-radius: 20px;
   box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.5);
   margin: 8px;
 }
@@ -4142,7 +4144,7 @@ tooltip.csd decoration {
 }
 
 messagedialog.csd decoration {
-  border-radius: 8px;
+  border-radius: 15px;
 }
 
 .solid-csd decoration {
@@ -4265,7 +4267,7 @@ messagedialog.csd decoration {
 
 headerbar,
 .titlebar {
-  padding: 0 14px;
+  padding: 1px 14px;
 }
 
 .solid-csd headerbar:not(.default-decoration) button.titlebutton.close, .solid-csd headerbar:not(.default-decoration) button.titlebutton.maximize, .solid-csd headerbar:not(.default-decoration) button.titlebutton.minimize, headerbar button.titlebutton.close, headerbar button.titlebutton.maximize, headerbar button.titlebutton.minimize, .csd headerbar button.titlebutton.close, .csd headerbar button.titlebutton.maximize, .csd headerbar button.titlebutton.minimize, headerbar.default-decoration button.titlebutton.close, headerbar.default-decoration button.titlebutton.maximize, headerbar.default-decoration button.titlebutton.minimize,
@@ -4287,8 +4289,8 @@ headerbar,
 .titlebar.default-decoration button.titlebutton.maximize,
 .csd
 .titlebar.default-decoration button.titlebutton.minimize {
-  min-width: 12px;
-  min-height: 12px;
+  min-width: 10px;
+  min-height: 10px;
   padding: 0;
   margin: 0 2px;
   color: transparent;
@@ -4431,7 +4433,7 @@ headerbar,
 .csd
 .titlebar.default-decoration button.titlebutton.minimize:backdrop {
   color: transparent;
-  background-color: rgba(255, 255, 255, 0.12);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .solid-csd headerbar:not(.default-decoration) button.titlebutton.close, headerbar button.titlebutton.close, .csd headerbar button.titlebutton.close, headerbar.default-decoration button.titlebutton.close,
@@ -4468,7 +4470,7 @@ headerbar,
 .titlebar.default-decoration button.titlebutton.close:active,
 .csd
 .titlebar.default-decoration button.titlebutton.close:checked {
-  background-color: #f0a200;
+  background-color: #FFAC00;
 }
 
 iconview selection, window#gnome-system-monitor.background.csd stack scrolledwindow treeview.view selection, iconview:selected, window#gnome-system-monitor.background.csd stack scrolledwindow treeview.view:selected,
@@ -6591,7 +6593,7 @@ na-tray-applet {
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 4px;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
-  background-color: #343938;
+  background-color: red;
 }
 
 .mate-panel-applet-slider frame > border {
@@ -6679,7 +6681,7 @@ na-tray-applet {
 
 #caja-extra-view-widget {
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  background-color: #343938;
+  background-color: red;
 }
 
 #caja-extra-view-widget > box > box > label {
@@ -8020,7 +8022,7 @@ text color for entries, views and content in general */
 @define-color theme_text_color #FFFFFF;
 /*
 widget base background color */
-@define-color theme_bg_color #343938;
+@define-color theme_bg_color red;
 /*
 text widgets and the like base background color */
 @define-color theme_base_color #42576D;
@@ -8032,7 +8034,7 @@ text/foreground color of selections */
 @define-color theme_selected_fg_color #FFFFFF;
 /*
 base background color of insensitive widgets */
-@define-color insensitive_bg_color #343938;
+@define-color insensitive_bg_color red;
 /*
 text foreground color of insensitive widgets */
 @define-color insensitive_fg_color rgba(255, 255, 255, 0.5);
@@ -8047,7 +8049,7 @@ text color for entries, views and content in general on backdrop windows */
 @define-color theme_unfocused_text_color #FFFFFF;
 /*
 widget base background color on backdrop windows */
-@define-color theme_unfocused_bg_color #343938;
+@define-color theme_unfocused_bg_color red;
 /*
 text widgets and the like base background color on backdrop windows */
 @define-color theme_unfocused_base_color #42576D;

@@ -9,10 +9,11 @@
   - Added dash-to-dock extension for better management of the dock.
 ###### [THEME]
   - Restyled text entries.
+  - Restyled header bars.
   - Updated design consistency in some elements.
   - Shell dock has been renewed completly.
   - Added color scheme (code highlighting) to gedit, now is more visual.
-  
+
 ## v1.0.0@beta1
 ###### [GENERAL]
   - First stable release.

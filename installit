@@ -31,8 +31,6 @@ if [[ `prompt` -eq 0 ]]; then
   exit
 fi
 
-echo
-
 # check if sudo command can be used without password
 if [ sudo -n true 2>/dev/null ]; then
     warn "sudo available, skipping password input...\n"

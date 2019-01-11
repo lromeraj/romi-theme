@@ -9,9 +9,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="24"
-   height="24"
-   viewBox="0 0 22.5 22.5"
+   width="25"
+   height="25"
+   viewBox="0 0 21.5 21.5"
    id="svg4366"
    version="1.1"
    inkscape:version="0.92.0 r"
@@ -58,13 +58,13 @@
        id="g4494"
        transform="translate(0,1.7382813e-5)">
       <circle
-         r="1.875"
+         r="3"
          cy="1041.1122"
-         cx="3.75"
+         cx="3"
          id="circle4787"
          style="opacity:0.8;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.9375;stroke-opacity:1" />
       <circle
-         r="1.875"
+         r="2.4"
          style="opacity:0.8;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.9375;stroke-opacity:1"
          id="circle4789"
          cx="11.25"

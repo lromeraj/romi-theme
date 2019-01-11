@@ -26,8 +26,7 @@ fi
 printf "${BPurple}installer${NC}@${BCyan}v1.0.1${NC} by ${Yellow}@lromeraj${NC}\n"
 
 printf "Install ${BPurple}Romi${NC} theme?"
-if [ `prompt` -eq 0 ]
-then
+if [[ `prompt` -eq 0 ]]; then
   warn "install was cancelled\n"
   exit
 fi

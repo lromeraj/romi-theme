@@ -135,7 +135,6 @@ _rshell()
   sleep 5
 }
 
-
 avai() {
     if hash $1 2>/dev/null; then
         echo "1"

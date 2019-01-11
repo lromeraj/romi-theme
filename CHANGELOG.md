@@ -8,12 +8,13 @@
 ###### [EXTENSIONS]
   - Added dash-to-dock extension for better management of the dock.
 ###### [THEME]
-  - Restyled text entries.
-  - Restyled header bars.
+  - Fixed text entries.
+  - Fixed header bars.
   - Updated design consistency in some elements.
-  - Shell dock has been renewed completly.
+  - Shell dock has been renewed completely.
   - Added color scheme (code highlighting) to gedit, now is more visual.
-
+  - Restyled activities icon.
+  - Fixed inline toolbars.
 ## v1.0.0@beta1
 ###### [GENERAL]
   - First stable release.
@@ -36,16 +37,16 @@
   - Added new extension that allows to refresh Wi-Fi networks.
   - Added new extension that allows to select audio input/output from
     quick access menu.
-[THEME]
+###### [THEME]
   - Lock screen shell notification banner has been restyled.
   - App switcher now is more visual.
-  - Nautilus has been renewed completly.
+  - Nautilus has been renewed completely.
   - Changed background color of gedit for a better visualization.
   - Fixed bar levels styling.
   - Inherit tabs have been redesigned.
   - The color of the system apps backgrounds has been changed.
   - All the desktop shell design has been cloned to the lock screen.
-  - Scrollbars have been renewed.
+  - Scroll-bars have been renewed.
   - Full redesigned lock screen.
   - Window's shadow has been increased.
   - Window's header bars have a new fresh look.
@@ -53,10 +54,10 @@
   - The quick settings menu has been renewed.
   - Selection menus have been redesigned.
   - Remixed terminal colors.
-  - Now the acent color is a mix of yellow and orange.
+  - Now the accent color is a mix of yellow and orange.
   - Renewed modal prompts and similar.
   - Added new animations to some elements.
   - Notification banners have been renewed.
   - Calendar preview has been redesigned.
-  - Increased zize of the lock screen clock.
+  - Increased size of the lock screen clock.
   - The login dialog of the lock screen has been renewed.

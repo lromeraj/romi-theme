@@ -6,8 +6,8 @@ display-line-numbers=true
 
 [org/gnome/desktop/interface]
 icon-theme='Romi'
-enable-animations=true
 gtk-theme='Romi'
+enable-animations=true
 
 [org/gnome/shell]
 disable-user-extensions=false
@@ -45,7 +45,7 @@ default='b1dcc9dd-5262-4d8d-a863-c897e6d979b9'
 foreground-color='rgb(255,255,255)'
 visible-name='Romi'
 use-system-font=false
-palette=['rgb(255,255,255)', 'rgb(255,85,85)', 'rgb(0,255,91)', 'rgb(255,169,0)', 'rgb(0,146,237)', 'rgb(255,0,180)', 'rgb(0,205,205)', 'rgb(229,229,229)', 'rgb(127,127,127)', 'rgb(255,0,0)', 'rgb(0,255,0)', 'rgb(255,182,38)', 'rgb(92,92,255)', 'rgb(255,0,255)', 'rgb(0,255,255)', 'rgb(255,255,255)']
+palette=['rgb(29,46,63)', 'rgb(255,85,85)', 'rgb(0,205,93)', 'rgb(255,172,0)', 'rgb(0,157,255)', 'rgb(255,0,139)', 'rgb(58,203,192)', 'rgb(238,232,213)', 'rgb(0,43,54)', 'rgb(203,75,22)', 'rgb(88,110,117)', 'rgb(101,123,131)', 'rgb(131,148,150)', 'rgb(108,113,196)', 'rgb(147,161,161)', 'rgb(253,246,227)']
 cell-width-scale=1.0
 bold-is-bright=false
 scroll-on-keystroke=true
@@ -61,8 +61,8 @@ use-theme-transparency=false
 scroll-on-output=false
 bold-color-same-as-fg=true
 cursor-blink-mode='off'
-background-color='rgb(50,66,82)'
-background-transparency-percent=3
+background-color='rgb(66,87,109)'
+background-transparency-percent=10
 scrollbar-policy='always'
 
 [org/gnome/terminal/legacy]

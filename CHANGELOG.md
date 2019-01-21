@@ -1,3 +1,20 @@
+## v1.0.0@beta3
+###### [GENERAL]
+  - Overall improvements.
+  - Removed unnecessary resource files.
+###### [INSTALLER]
+  - Minor text fixes.
+  - Reboot is unnecessary now.
+###### [EXTENSIONS]
+  - dash-to-dock fixes.
+###### [THEME]
+  - Fixed text entries.
+  - Fixed scrollbars.
+  - Remixed terminal colors.
+  - Fixed header text entries.
+  - Fixed red backgrounds.
+  - Improved design consistency in some elements.
+
 ## v1.0.0@beta2
 ###### [GENERAL]
   - Overall improvements.
@@ -15,9 +32,10 @@
   - Added color scheme (code highlighting) to gedit, now is more visual.
   - Restyled activities icon.
   - Fixed inline toolbars.
+
 ## v1.0.0@beta1
 ###### [GENERAL]
-  - First stable release.
+  - First beta release.
   - Improved installer.
   - Full UI redesign.
   - Reduced source pack size. (now just ~ 22MB, before ~ 70MB)

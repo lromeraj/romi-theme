@@ -6,7 +6,7 @@ Romi theme comes with a dynamic installer that will make everything fast and eas
 ### Steps
 1. Unzip downloaded zip file
 ```
-$ unzip romi-theme.zip
+$ unzip romi-theme-master.zip
 ```
 2. Enter source files directory
 ```

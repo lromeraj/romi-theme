@@ -8,7 +8,7 @@ Romi theme comes with a dynamic installer that will make everything fast and eas
 ```
 $ git clone https://github.com/lromeraj/romi-theme
 ```
-2. Enter to the directory
+2. Enter directory
 ```
 $ cd romi-theme
 ```

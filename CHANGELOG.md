@@ -7,6 +7,7 @@
   - Minor text fixes.
 	- Minor bug fixes.
 ###### [EXTENSIONS]
+	- Removed `wifi-refresh` extension.
   - Upated all gnome extensions.
 ###### [ICONS]
 	- Updated `Numix-circle` icons.

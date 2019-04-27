@@ -1,9 +1,10 @@
 ## v1.1.0
 
 `[GENERAL]`
-- Support for Ubuntu 19.04 (Disco Dingo)
+- Support for **Ubuntu 19.04 (Disco Dingo)**
 - Overall improvements.
 - Removed unnecessary resource files.
+- Updated `dconf` database.
 
 `[INSTALLER]`
 - Minor text fixes.

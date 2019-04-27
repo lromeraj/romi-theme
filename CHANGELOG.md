@@ -1,19 +1,19 @@
 ## v1.1.0
-###### [GENERAL]
+### [GENERAL]
 	- Support for Ubuntu 19.04 (Disco Dingo)
   - Overall improvements.
   - Removed unnecessary resource files.
-###### [INSTALLER]
+#### [INSTALLER]
   - Minor text fixes.
 	- Minor bug fixes.
-###### [EXTENSIONS]
+#### [EXTENSIONS]
 	- Added new extension `desktop-icons@csoriano` (wtih Romi customizations) to see desktop icons, folders, etc ...
 	- Removed `wifi-refresh` extension.
   - Upated all extensions.
-###### [ICONS]
+#### [ICONS]
 	- Updated `Numix-circle` icons.
 	- Updated `Canta` icons.
-###### [THEME]
+#### [THEME]
 	- Fixed text editor scheme in `Ubuntu 19.04`.
   - Fixed `stack-side-bars`.
 	- Updated terminal profile.

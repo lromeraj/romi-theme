@@ -1,3 +1,67 @@
+3.32.1
+======
+* Fix windowsNavigator extension after ES6 port [Florian; #143]
+* screenshot-window-sizer: Add phone screenshot sizes [Adrien; !65]
+* Misc. bug fixes and cleanups [Fabian; !62]
+
+Contributors:
+  Florian Müllner, Adrien Plazas, Fabian P. Schmidt
+
+3.32.0
+======
+
+Contributors:
+  Florian Müllner
+
+Translations:
+  Victor Ibragimov [tg], Kristjan SCHMIDT [eo], Mart Raudsepp [et]
+
+3.31.92
+=======
+* Misc. bug fixes and cleanups [Florian; !57, !58, !59, !60]
+
+Contributors:
+  Florian Müllner
+
+3.31.91
+=======
+* apps-menu: Remove outdated legacy-tray handling [Florian; !53]
+* user-theme: Allow using XDG user data dir [Tomasz; !55]
+* Misc. bug fixes and cleanups [Florian; !52, !54, !56]
+
+Contributors:
+  Tomasz Gąsior, Florian Müllner
+
+Translators:
+  Matej Urbančič [sl], Gun Chleoc [gd]
+
+3.31.90
+=======
+* Misc. bug fixes and cleanups [Florian; !49, !50, !51]
+
+Contributors:
+  Florian Müllner
+
+Translators:
+  Ryuta Fujii [ja], Charles Monzat [fr], Pieter Schalk Schoeman [af]
+
+3.31.2
+======
+* Remove obsolete alternate-tab extension [Florian; #786496]
+* Adjust to gnome-shell changes [Florian; #113]
+
+Contributors:
+  Florian Müllner
+
+3.30.1
+======
+* apps-menu: Fix height on HiDPI systems [Florian; #102]
+* window-list: Only switch between windows on active workspace when scrolling
+  [Florian; #78]
+
+Contributors:
+  Florian Müllner
+
 3.30.0
 ======
 * Bump version

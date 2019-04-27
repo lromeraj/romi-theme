@@ -1,3 +1,19 @@
+## v1.1.0
+###### [GENERAL]
+	- Support for Ubuntu 19.04 (Disco Dingo)
+  - Overall improvements.
+  - Removed unnecessary resource files.
+###### [INSTALLER]
+  - Minor text fixes.
+	- Minor bug fixes.
+###### [EXTENSIONS]
+  - Upated all gnome extensions.
+###### [ICONS]
+	- Updated `Numix-circle` icons.
+###### [THEME]
+  - Fixed `stack-side-bars`.
+	- Updated terminal profile.
+
 ## v1.0.0@beta3
 ###### [GENERAL]
   - Overall improvements.

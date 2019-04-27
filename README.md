@@ -4,13 +4,13 @@
 Romi theme comes with a dynamic installer that will make everything fast and easy.
 
 ### Steps
-1. Unzip downloaded zip file
+1. Clone the repo
 ```
-$ unzip romi-theme-master.zip
+$ git clone https://github.com/lromeraj/romi-theme
 ```
-2. Enter source files directory
+2. Enter to the directory
 ```
-$ cd romi-theme-master
+$ cd romi-theme
 ```
 3. Time to execute installer
 ```

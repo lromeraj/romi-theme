@@ -5,7 +5,7 @@ background-pattern='none'
 display-line-numbers=true
 
 [org/gnome/desktop/interface]
-icon-theme='Romi'
+icon-theme='Canta'
 gtk-theme='Romi'
 enable-animations=true
 
@@ -42,28 +42,28 @@ list=['b1dcc9dd-5262-4d8d-a863-c897e6d979b9']
 default='b1dcc9dd-5262-4d8d-a863-c897e6d979b9'
 
 [org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
-foreground-color='rgb(255,255,255)'
-visible-name='Romi'
-use-system-font=false
-palette=['rgb(29,46,63)', 'rgb(255,85,85)', 'rgb(0,205,93)', 'rgb(255,172,0)', 'rgb(0,157,255)', 'rgb(202,115,255)', 'rgb(58,203,192)', 'rgb(238,232,213)', 'rgb(0,43,54)', 'rgb(203,75,22)', 'rgb(88,110,117)', 'rgb(101,123,131)', 'rgb(131,148,150)', 'rgb(108,113,196)', 'rgb(147,161,161)', 'rgb(253,246,227)']
-cell-width-scale=1.0
-bold-is-bright=false
 scroll-on-keystroke=true
-cursor-background-color='rgb(255,255,255)'
-cursor-shape='block'
-cursor-colors-set=true
-use-theme-colors=false
-cell-height-scale=1.0
-use-transparent-background=true
-cursor-foreground-color='rgb(55,73,91)'
-font='Ubuntu Mono 12'
-use-theme-transparency=false
-scroll-on-output=false
 bold-color-same-as-fg=true
-cursor-blink-mode='off'
-background-color='rgb(66,87,109)'
-background-transparency-percent=10
+cursor-foreground-color='rgb(55,73,91)'
 scrollbar-policy='always'
+use-transparent-background=true
+background-color='rgb(66,87,109)'
+cursor-colors-set=true
+cursor-shape='block'
+visible-name='Romi'
+use-theme-colors=false
+scroll-on-output=false
+font='Ubuntu Mono 12'
+use-system-font=false
+cursor-background-color='rgb(255,255,255)'
+background-transparency-percent=10
+palette=['rgb(29,46,63)', 'rgb(255,85,85)', 'rgb(0,205,93)', 'rgb(255,172,0)', 'rgb(0,157,255)', 'rgb(202,115,255)', 'rgb(58,203,192)', 'rgb(255,255,255)', 'rgb(29,46,63)', 'rgb(255,85,85)', 'rgb(88,110,117)', 'rgb(101,123,131)', 'rgb(131,148,150)', 'rgb(108,113,196)', 'rgb(147,161,161)', 'rgb(255,255,255)']
+cell-width-scale=1.0
+foreground-color='rgb(255,255,255)'
+cell-height-scale=1.0
+bold-is-bright=false
+cursor-blink-mode='off'
+use-theme-transparency=false
 
 [org/gnome/terminal/legacy]
 schema-version=uint32 3

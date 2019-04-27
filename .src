@@ -75,23 +75,22 @@ On_IWhite='\033[0;107m'   # White
 
 success()
 {
-  printf "${BGreen}success:${NC} $1" > /dev/tty
+  echo -en "${BGreen}success:${NC} $1" >&1
 }
 
 warn()
 {
-  printf "${BYellow}warn:${NC} $1" > /dev/tty
+  echo -en "${BYellow}warn:${NC} $1" >&1
 }
 
 info()
 {
-  printf "${BCyan}info:${NC} $1" > /dev/tty
-  sleep 0.5
+  echo -en "${BCyan}info:${NC} $1" >&1
 }
 
 error()
 {
-  printf "${BRed}error:${NC} $1" > /dev/tty
+  echo -en "${BRed}error:${NC} $1" >&1
 }
 
 prompt()
@@ -135,7 +134,8 @@ _rshell()
   sleep 5
 }
 
-avai() {
+avai()
+{
     if hash $1 2>/dev/null; then
         echo "1"
     else

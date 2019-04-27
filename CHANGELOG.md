@@ -1,33 +1,33 @@
 ## v1.1.0
-### [GENERAL]
+`[GENERAL]`
 	- Support for Ubuntu 19.04 (Disco Dingo)
   - Overall improvements.
   - Removed unnecessary resource files.
-#### [INSTALLER]
+`[INSTALLER]`
   - Minor text fixes.
 	- Minor bug fixes.
-#### [EXTENSIONS]
+`[EXTENSIONS]`
 	- Added new extension `desktop-icons@csoriano` (wtih Romi customizations) to see desktop icons, folders, etc ...
 	- Removed `wifi-refresh` extension.
   - Upated all extensions.
-#### [ICONS]
+`[ICONS]`
 	- Updated `Numix-circle` icons.
 	- Updated `Canta` icons.
-#### [THEME]
+`[THEME]`
 	- Fixed text editor scheme in `Ubuntu 19.04`.
   - Fixed `stack-side-bars`.
 	- Updated terminal profile.
 
 ## v1.0.0@beta3
-###### [GENERAL]
+`[GENERAL]`
   - Overall improvements.
   - Removed unnecessary resource files.
-###### [INSTALLER]
+`[INSTALLER]`
   - Minor text fixes.
   - Reboot is unnecessary now.
-###### [EXTENSIONS]
+`[EXTENSIONS]`
   - dash-to-dock fixes.
-###### [THEME]
+`[THEME]`
   - Fixed text entries.
   - Fixed scrollbars.
   - Remixed terminal colors.
@@ -36,15 +36,15 @@
   - Improved design consistency in some elements.
 
 ## v1.0.0@beta2
-###### [GENERAL]
+`[GENERAL]`
   - Overall improvements.
   - Removed unnecessary resource files.
-###### [INSTALLER]
+`[INSTALLER]`
   - Improved stability.
   - Minor text fixes.
-###### [EXTENSIONS]
+`[EXTENSIONS]`
   - Added dash-to-dock extension for better management of the dock.
-###### [THEME]
+`[THEME]`
   - Fixed text entries.
   - Fixed header bars.
   - Updated design consistency in some elements.
@@ -54,13 +54,13 @@
   - Fixed inline toolbars.
 
 ## v1.0.0@beta1
-###### [GENERAL]
+`[GENERAL]`
   - First beta release.
   - Improved installer.
   - Full UI redesign.
   - Reduced source pack size. (now just ~ 22MB, before ~ 70MB)
   - Removed unnecessary resource files.
-###### [INSTALLER]
+`[INSTALLER]`
   - Improved user input handle.
   - The installer now installs and enables extensions.
   - Fixed a issue that caused an error while copying some dirs.
@@ -71,11 +71,11 @@
   - Fixed error that prevented from enabling user-theme extension.
   - Minor text fixes.
   - Minor bug fixes.
-###### [EXTENSIONS]
+`[EXTENSIONS]`
   - Added new extension that allows to refresh Wi-Fi networks.
   - Added new extension that allows to select audio input/output from
     quick access menu.
-###### [THEME]
+`[THEME]`
   - Lock screen shell notification banner has been restyled.
   - App switcher now is more visual.
   - Nautilus has been renewed completely.

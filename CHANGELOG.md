@@ -1,32 +1,41 @@
 ## v1.1.0
+
 `[GENERAL]`
 - Support for Ubuntu 19.04 (Disco Dingo)
 - Overall improvements.
 - Removed unnecessary resource files.
+
 `[INSTALLER]`
 - Minor text fixes.
 - Minor bug fixes.
+
 `[EXTENSIONS]`
 - Added new extension `desktop-icons@csoriano` (wtih Romi customizations) to see desktop icons, folders, etc ...
 - Removed `wifi-refresh` extension.
 - Upated all extensions.
+
 `[ICONS]`
 - Updated `Numix-circle` icons.
 - Updated `Canta` icons.
+
 `[THEME]`
 - Fixed text editor scheme in `Ubuntu 19.04`.
 - Fixed `stack-side-bars`.
 - Updated terminal profile.
 
 ## v1.0.0@beta3
+
 `[GENERAL]`
 - Overall improvements.
 - Removed unnecessary resource files.
+
 `[INSTALLER]`
 - Minor text fixes.
 - Reboot is unnecessary now.
+
 `[EXTENSIONS]`
 - dash-to-dock fixes.
+
 `[THEME]`
 - Fixed text entries.
 - Fixed scrollbars.
@@ -36,14 +45,18 @@
 - Improved design consistency in some elements.
 
 ## v1.0.0@beta2
+
 `[GENERAL]`
 - Overall improvements.
 - Removed unnecessary resource files.
+
 `[INSTALLER]`
 - Improved stability.
 - Minor text fixes.
+
 `[EXTENSIONS]`
 - Added dash-to-dock extension for better management of the dock.
+
 `[THEME]`
 - Fixed text entries.
 - Fixed header bars.
@@ -54,12 +67,14 @@
 - Fixed inline toolbars.
 
 ## v1.0.0@beta1
+
 `[GENERAL]`
 - First beta release.
 - Improved installer.
 - Full UI redesign.
 - Reduced source pack size. (now just ~ 22MB, before ~ 70MB)
 - Removed unnecessary resource files.
+
 `[INSTALLER]`
 - Improved user input handle.
 - The installer now installs and enables extensions.
@@ -71,9 +86,11 @@
 - Fixed error that prevented from enabling user-theme extension.
 - Minor text fixes.
 - Minor bug fixes.
+
 `[EXTENSIONS]`
 - Added new extension that allows to refresh Wi-Fi networks.
 - Added new extension that allows to select audio input/output from quick access menu.
+
 `[THEME]`
 - Lock screen shell notification banner has been restyled.
 - App switcher now is more visual.

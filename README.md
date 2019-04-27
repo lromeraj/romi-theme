@@ -1,11 +1,11 @@
 # Romi Theme
 
-## Install
-Romi theme comes with a dynamic installer that will make everything fast and easy.
-
-### Note
+## Note
 Romi theme **only supports** (by the moment) **Ubuntu 19.04 (Disco Dingo)**
 Make sure that your gnome-shell version is `3.32`, to see your current version use `$ gnome-shell --version`.
+
+## Install
+Romi theme comes with a dynamic installer that will make everything fast and easy.
 
 ### Steps
 1. Clone the repo

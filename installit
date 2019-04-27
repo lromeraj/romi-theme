@@ -5,17 +5,26 @@ source .src
 # trap Ctrl + C
 trap ctrl_c 2
 
-ctrl_c() {
-  echo
-  warn "install cancelled\n"
-  exit
-}
+BGS_DIR=/usr/share/backgrounds
+THEME_DIR=~/.themes
+ICONS_DIR=~/.icons
+GDM3_CSS=/etc/alternatives/gdm3.css
+EXTENSIONS_DIR=~/.local/share/gnome-shell/extensions
 
-blur()
-{
-  info "blurring $1, this may take a while...\n"
-  convert $1 -blur 0x50 $1
-}
+DEPS=()
+DEPS+=( "gsettings" )
+DEPS+=( "dconf" )
+DEPS+=( "gnome-shell-extension-tool" )
+DEPS+=( "convert" )
+
+CLEAN=()
+CLEAN+=( "/usr/share/themes/Romi" )
+CLEAN+=( "/usr/share/icons/Canta" )
+CLEAN+=( "/usr/share/icons/Numix-Circle" )
+
+SCHMES_PATHS=()
+SCHMES_PATHS+=( "/usr/share/gtksourceview-3.0/styles/" )
+SCHMES_PATHS+=( "/usr/share/gtksourceview-4/styles/" )
 
 # check root privilegies
 if [ "$EUID" -eq 0 ]; then
@@ -39,6 +48,40 @@ else
   sudo echo "" > /dev/null
 fi
 
+info "checking dependencies ... \\n"
+
+sts=0
+for d in ${DEPS[@]}; do
+
+  echo -en "checking ${Cyan}$d${NC} ... "
+  command -v $d > /dev/null
+
+  if [ $? -eq 0 ]; then
+    echo -en "${BGreen}OK${NC}\\n"
+  else
+    echo -en "${BRed}ERR${NC}\\n"
+    sts=1
+  fi
+
+  sleep 0.1
+
+done
+
+if [ $sts -ne 0 ]; then
+  error "some dependencies are not available\\n"
+  exit 1
+fi
+
+# make clean
+for cl in ${CLEAN[@]}; do
+
+  if [ -e $cl ]; then
+    info "cleaning ${Yellow}$cl${NC}\\n"
+    sudo rm -rf $cl
+  fi
+
+done
+
 info "loading wallpapers...\n"
 
 #initialize array
@@ -50,13 +93,11 @@ WALLS=(
   [lock_screen]="gdmlock.jpg"
 )
 
-for env in ${!WALLS[@]}
-do
+for env in ${!WALLS[@]}; do
 
   fileN=${WALLS[$env]}
 
-  if [ -e ./wallpapers/$fileN ]
-  then
+  if [ -e ./wallpapers/$fileN ]; then
     info "using custom wallpaper $fileN\n"
     printf "Do you want to blur it?"
     if [[ `prompt` -eq 1 ]]
@@ -96,19 +137,16 @@ do
 
 done
 
-info "copying wallpapers ...\n"
-sudo mv ./wallpapers/gdmlock.jpg ./wallpapers/desktop.jpg /usr/share/backgrounds/
+info "copying wallpapers -> ${BWhite}${BGS_DIR}${NC}\\n"
+sudo mv ./wallpapers/gdmlock.jpg ./wallpapers/desktop.jpg ${BGS_DIR}
 
-info "installing icons ...\n"
-sudo cp -fr .icons/* /usr/share/icons/
+info "installing icons -> ${BWhite}${ICONS_DIR}${NC}\\n"
+cp -fr .icons/* ${ICONS_DIR}
 
-info "installing apps theme ...\n"
-sudo cp -fr .gtk/* /usr/share/themes/
+info "installing apps theme -> ${BWhite}${THEME_DIR}${NC}\\n"
+cp -fr .gtk/* ${THEME_DIR}
 
-SCHMES_PATHS=()
-SCHMES_PATHS+=( "/usr/share/gtksourceview-3.0/styles/" )
-SCHMES_PATHS+=( "/usr/share/gtksourceview-4/styles/" )
-info "installing schemes ...\n"
+info "installing schemes ...\\n"
 
 for SP in ${SCHMES_PATHS[@]}; do
   if [ -e $SP ]; then
@@ -116,15 +154,13 @@ for SP in ${SCHMES_PATHS[@]}; do
   fi
 done
 
+info "installing shell theme -> ${BWhite}${GDM3_CSS}${NC}\\n"
+sudo cp -f .gdm/gnome-shell.css ${GDM3_CSS}
 
-info "installing shell theme ...\n"
-sudo cp -f .gdm/gnome-shell.css /etc/alternatives/gdm3.css
+info "installing dependency extensions -> ${BWhite}${EXTENSIONS_DIR}${NC}\\n"
+mkdir -p ${EXTENSIONS_DIR} && cp -r .extensions/* ${EXTENSIONS_DIR}
 
-info "installing dependency extensions ...\n"
-mkdir -p ~/.local/share/gnome-shell/extensions/
-cp -r .extensions/* ~/.local/share/gnome-shell/extensions/
-
-info "installing extensions...\n"
+info "enabling extensions ... \\n"
 for ext_name in `ls .extensions/`
 do
   printf "${Green}enabling: ${BPurple}$ext_name${NC} ... "
@@ -135,6 +171,7 @@ do
   else
     printf "${Yellow}already enabled${NC}\\n"
   fi
+
 done
 
 info "resetting terminal preferences ...\\n"
@@ -153,4 +190,3 @@ warn "a reboot is higly recommended ... do it now?"
 if [[ `prompt` -eq 1 ]]; then
 	sudo reboot
 fi
-

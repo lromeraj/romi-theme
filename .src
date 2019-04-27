@@ -93,6 +93,18 @@ error()
   echo -en "${BRed}error:${NC} $1" >&1
 }
 
+ctrl_c() {
+  echo
+  warn "install cancelled\n"
+  exit
+}
+
+blur()
+{
+  info "blurring $1, this may take a while...\n"
+  convert $1 -blur 0x50 $1
+}
+
 prompt()
 {
   i=0

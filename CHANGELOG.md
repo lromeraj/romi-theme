@@ -7,8 +7,12 @@
 - Updated `dconf` database.
 
 `[INSTALLER]`
-- Minor text fixes.
 - Minor bug fixes.
+- Minor text fixes.
+- Installer now checks for dependencies.
+- Icons are now installed inside `~/.icons/` folder.
+- Romi theme is now installed under `~/.themes/` folder.
+- Installer will remove unnecessary resource files of older versions.
 
 `[EXTENSIONS]`
 - Added new extension `desktop-icons@csoriano` (wtih Romi customizations) to see desktop icons, folders, etc ...
@@ -20,6 +24,9 @@
 - Updated `Canta` icons.
 
 `[THEME]`
+- Improved lock screen entries.
+- Improved contrast of the items of the lock screen.
+- Improved desktop icon decorations.
 - Fixed text editor scheme in `Ubuntu 19.04`.
 - Fixed `stack-side-bars`.
 - Updated terminal profile.

@@ -13,7 +13,7 @@
 `[EXTENSIONS]`
 - Added new extension `desktop-icons@csoriano` (wtih Romi customizations) to see desktop icons, folders, etc ...
 - Removed `wifi-refresh` extension.
-- Upated all extensions.
+- Updated all extensions.
 
 `[ICONS]`
 - Updated `Numix-circle` icons.

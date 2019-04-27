@@ -34,7 +34,7 @@
 - Reboot is unnecessary now.
 
 `[EXTENSIONS]`
-- dash-to-dock fixes.
+- `dash-to-dock` extension fixes.
 
 `[THEME]`
 - Fixed text entries.

@@ -3,6 +3,7 @@ scheme='romi'
 highlight-current-line=true
 background-pattern='none'
 display-line-numbers=true
+tabs-size=2
 
 [org/gnome/desktop/interface]
 icon-theme='Canta'

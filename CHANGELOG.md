@@ -7,11 +7,14 @@
   - Minor text fixes.
 	- Minor bug fixes.
 ###### [EXTENSIONS]
+	- Added new extension `desktop-icons@csoriano` (wtih Romi customizations) to see desktop icons, folders, etc ...
 	- Removed `wifi-refresh` extension.
-  - Upated all gnome extensions.
+  - Upated all extensions.
 ###### [ICONS]
 	- Updated `Numix-circle` icons.
+	- Updated `Canta` icons.
 ###### [THEME]
+	- Fixed text editor scheme in `Ubuntu 19.04`.
   - Fixed `stack-side-bars`.
 	- Updated terminal profile.
 

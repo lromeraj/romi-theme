@@ -105,15 +105,24 @@ sudo cp -fr .icons/* /usr/share/icons/
 info "installing apps theme ...\n"
 sudo cp -fr .gtk/* /usr/share/themes/
 
+SCHMES_PATHS=()
+SCHMES_PATHS+=( "/usr/share/gtksourceview-3.0/styles/" )
+SCHMES_PATHS+=( "/usr/share/gtksourceview-4/styles/" )
 info "installing schemes ...\n"
-sudo cp -f .schemes/* /usr/share/gtksourceview-3.0/styles/
+
+for SP in ${SCHMES_PATHS[@]}; do
+  if [ -e $SP ]; then
+    sudo cp -f .schemes/* $SP
+  fi
+done
+
 
 info "installing shell theme ...\n"
 sudo cp -f .gdm/gnome-shell.css /etc/alternatives/gdm3.css
 
 info "installing dependency extensions ...\n"
 mkdir -p ~/.local/share/gnome-shell/extensions/
-cp -fr .extensions/* ~/.local/share/gnome-shell/extensions/
+sudo cp -r .extensions/* ~/.local/share/gnome-shell/extensions/
 
 info "installing extensions...\n"
 for ext_name in `ls .extensions/`

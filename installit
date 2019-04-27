@@ -148,3 +148,9 @@ _rshell # restart shell
 
 success "all done\\n"
 notify-send "Romi theme" "Theme was installed correctly"
+
+warn "a reboot is higly recommended ... do it now?"
+if [[ `prompt` -eq 1 ]]; then
+	sudo reboot
+fi
+

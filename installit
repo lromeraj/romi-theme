@@ -141,10 +141,10 @@ info "copying wallpapers -> ${BWhite}${BGS_DIR}${NC}\\n"
 sudo mv ./wallpapers/gdmlock.jpg ./wallpapers/desktop.jpg ${BGS_DIR}
 
 info "installing icons -> ${BWhite}${ICONS_DIR}${NC}\\n"
-cp -fr .icons/* ${ICONS_DIR}
+mkdir -p ${ICONS_DIR} && cp -fr .icons/* ${ICONS_DIR}
 
 info "installing apps theme -> ${BWhite}${THEME_DIR}${NC}\\n"
-cp -fr .gtk/* ${THEME_DIR}
+mkdir -p ${THEME_DIR} && cp -fr .gtk/* ${THEME_DIR}
 
 info "installing schemes ...\\n"
 

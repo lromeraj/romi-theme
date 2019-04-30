@@ -1,3 +1,7 @@
+## v1.1.1
+`[EXTENSIONS]`
+- Added `dynamic-panel-transparency` extension. In gnome `3.32` the top bar transparency was removed natively.
+
 ## v1.1.0
 
 `[GENERAL]`

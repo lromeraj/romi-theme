@@ -1,3 +1,24 @@
+[org/gnome/shell/extensions/dynamic-panel-transparency]
+force-theme-update=false
+current-user-theme='Romi'
+enable-background-color=true
+remove-panel-styling=true
+theme-opacity=51
+panel-theme-color=(0, 0, 0)
+icon-shadow=false
+text-shadow-position=(0, 3, 5)
+maximized-opacity=204
+panel-color=[66, 87, 109]
+icon-shadow-position=(0, 2, 5)
+enable-opacity=true
+transition-speed=300
+transition-windows-touch=false
+text-shadow=false
+unmaximized-opacity=63
+hide-corners=true
+enable-text-color=false
+
+
 [org/gnome/gedit/preferences/editor]
 scheme='romi'
 highlight-current-line=true

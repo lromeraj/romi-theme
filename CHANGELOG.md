@@ -2,6 +2,9 @@
 `[EXTENSIONS]`
 - Added `dynamic-panel-transparency` extension. In gnome `3.32` the top bar transparency was removed natively.
 
+`[FIXES]`
+- Fixed error that caused icons to not load properly.
+
 ## v1.1.0
 
 `[GENERAL]`

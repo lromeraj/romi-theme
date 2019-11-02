@@ -3,7 +3,7 @@
 ## Note
 Romi theme **only supports** (by the moment) **Ubuntu 19.10 (Eoan Ermine)** and **Ubuntu 19.04 (Disco Dingo)**.
 
-## Last changes v1.3 02/11/2019 17:15
+## Last changes v1.3 | 02/11/2019 17:15
 `[NEW]`
 - Support for Ubuntu `19.10`.
 - Updated `dconf`.

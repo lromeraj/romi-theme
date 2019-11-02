@@ -1,3 +1,30 @@
+## v1.3
+`[NEW]`
+- Support for Ubuntu `19.10`.
+- Updated `dconf`.
+
+`[THEME]`
+- Improved terminal color contrast.
+
+`[ICONS]`
+- Updated `Numix` icons to the latest version.
+
+`[EXTENSIONS]`
+- Updated all extensions to the latest version to support Gnome `3.34`.
+- Changed desktop extension to `desktop-icons@csoriano` to `ding@rastersoft.com`.
+
+`[INSTALLER]`
+- Improved isntaller stability
+- The installer now checks the OS version to avoid compatibility issues.
+- If you come from Ubuntu 19.04, the installer will remove the obsolete extensions to avoid corruptions.
+
+`[FIXES]`
+- Now you can drag and drop from Desktop to Nautilus file manager.
+- Fixed error that caused icons to not load properly.
+
+`[UPCOMING]`
+- Theme uninstaller.
+
 ## v1.1.1
 `[EXTENSIONS]`
 - Added `dynamic-panel-transparency` extension. In gnome `3.32` the top bar transparency was removed natively.

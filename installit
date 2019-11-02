@@ -5,26 +5,89 @@ source .src
 # trap Ctrl + C
 trap ctrl_c 2
 
+SUPPORTED_OSV=( "19.04" "19.10" )
+
+OS_V=$(lsb_release -r | grep -Po "([0-9]{1,}\.)+[0-9]{1,}")
+
+SRC=ubuntu_${OS_V}/
+SRC_GTK=${SRC}.gtk/
+SRC_GDM=${SRC}.gdm/
+SRC_ICONS=${SRC}.icons/
+SRC_EXTENSIONS=${SRC}.extensions/
+SRC_WALLPAPERS=${SRC}wallpapers/
+SRC_SCHEMES=${SRC}.schemes/
+
 BGS_DIR=/usr/share/backgrounds
 THEME_DIR=~/.themes
 ICONS_DIR=~/.icons
 GDM3_CSS=/etc/alternatives/gdm3.css
 EXTENSIONS_DIR=~/.local/share/gnome-shell/extensions
 
-DEPS=()
-DEPS+=( "gsettings" )
-DEPS+=( "dconf" )
-DEPS+=( "gnome-shell-extension-tool" )
-DEPS+=( "convert" )
 
-CLEAN=()
-CLEAN+=( "/usr/share/themes/Romi" )
-CLEAN+=( "/usr/share/icons/Canta" )
-CLEAN+=( "/usr/share/icons/Numix-Circle" )
+DEPS=( $( cat .deps ) ) # installer dependencies
+CLEAN=() # things to be cleaned
 
-SCHMES_PATHS=()
-SCHMES_PATHS+=( "/usr/share/gtksourceview-3.0/styles/" )
-SCHMES_PATHS+=( "/usr/share/gtksourceview-4/styles/" )
+SCHEMES_PATHS=()
+SCHEMES_PATHS+=( "/usr/share/gtksourceview-3.0/styles/" )
+SCHEMES_PATHS+=( "/usr/share/gtksourceview-4/styles/" )
+
+OBSOLETE_EXTENSIONS=()
+if [ -e ${SRC}/.obsolete_extensions ]; then
+  OBSOLETE_EXTENSIONS=( $( cat ${SRC}/.obsolete_extensions ) )
+fi
+
+check_deps()
+{
+
+  info "checking installer dependencies ... \\n"
+
+  sts=0
+  for d in ${DEPS[@]}; do
+
+    echo -en "checking ${Cyan}$d${NC} ... "
+    command -v $d > /dev/null
+
+    if [ $? -eq 0 ]; then
+      echo -en "${BGreen}OK${NC}\\n"
+    else
+      echo -en "${BRed}ERR${NC}\\n"
+      sts=1
+    fi
+
+    sleep 0.1
+
+  done
+
+  if [ $sts -ne 0 ]; then
+    error "some dependencies are not available\\n"
+    exit 1
+  fi
+
+}
+
+
+check_compatibility()
+{
+
+  info "checking OS compatibility ...\\n"
+
+  found=false
+  for _V in ${SUPPORTED_OSV[@]}; do
+
+    if [ $OS_V == $_V ]; then
+      found=true
+      success "Ubuntu ($OS_V) is supported\\n"
+      break;
+    fi
+
+  done
+
+  if [ $found = false ]; then
+    error "Ubuntu ($OS_V) is not supported\\n"
+    exit 1
+  fi
+
+}
 
 # check root privilegies
 if [ "$EUID" -eq 0 ]; then
@@ -32,7 +95,17 @@ if [ "$EUID" -eq 0 ]; then
   exit
 fi
 
-printf "${BPurple}installer${NC}@${BCyan}v1.1.3${NC} by ${Yellow}@lromeraj${NC}\n"
+printf ${BPurple}
+cat .ascii_title
+printf ${BYellow}
+cat .ascii_version
+printf ${NC}
+
+# check installer dependencies
+check_deps
+
+# check os compatibility
+check_compatibility
 
 printf "Install ${BPurple}Romi${NC} theme?"
 if [[ `prompt` -eq 0 ]]; then
@@ -48,38 +121,19 @@ else
   sudo echo "" > /dev/null
 fi
 
-info "checking dependencies ... \\n"
 
-sts=0
-for d in ${DEPS[@]}; do
+CLEAN=()
 
-  echo -en "checking ${Cyan}$d${NC} ... "
-  command -v $d > /dev/null
-
-  if [ $? -eq 0 ]; then
-    echo -en "${BGreen}OK${NC}\\n"
-  else
-    echo -en "${BRed}ERR${NC}\\n"
-    sts=1
-  fi
-
-  sleep 0.1
-
-done
-
-if [ $sts -ne 0 ]; then
-  error "some dependencies are not available\\n"
-  exit 1
+if [ $OS_V == "19.10" ]; then
+  CLEAN+=( "~/.themes/Romi" )
+  CLEAN+=( "~/.icons/Canta" )
+  CLEAN+=( "~/.icons/Numix-Circle" )
 fi
 
-# make clean
 for cl in ${CLEAN[@]}; do
-
-  if [ -e $cl ]; then
-    info "cleaning ${Yellow}$cl${NC}\\n"
-    sudo rm -rf $cl
-  fi
-
+  info "cleaning -> ${BWhite}$cl${NC}\\n"
+  rm -rf $cl
+  sleep 0.2
 done
 
 info "loading wallpapers...\n"
@@ -97,12 +151,11 @@ for env in ${!WALLS[@]}; do
 
   fileN=${WALLS[$env]}
 
-  if [ -e ./wallpapers/$fileN ]; then
+  if [ -e ${SRC_WALLPAPERS}/$fileN ]; then
     info "using custom wallpaper $fileN\n"
     printf "Do you want to blur it?"
-    if [[ `prompt` -eq 1 ]]
-    then
-      blur ./wallpapers/$fileN
+    if [[ `prompt` -eq 1 ]]; then
+      blur ${SRC_WALLPAPERS}/$fileN
     fi
 
   else
@@ -111,23 +164,21 @@ for env in ${!WALLS[@]}; do
 
       desktop)
         file=/usr/share/backgrounds/desktop.jpg
-        if [ ! -e $file ]
-        then
+        if [ ! -e $file ]; then
           warn "$file was not found, copying default...\n"
-          cp ./wallpapers/.desktop_def.jpg ./wallpapers/desktop.jpg
+          cp ${SRC_WALLPAPERS}/.desktop_def.jpg ${SRC_WALLPAPERS}/desktop.jpg
         else
-          cp $file ./wallpapers/desktop.jpg
+          cp $file ${SRC_WALLPAPERS}/desktop.jpg
         fi
       ;;
 
       lock_screen)
         file=/usr/share/backgrounds/gdmlock.jpg
-        if [ ! -e $file ]
-        then
+        if [ ! -e $file ]; then
           warn "$file was not found, copying default...\n"
-          cp ./wallpapers/.gdmlock_def.jpg ./wallpapers/gdmlock.jpg
+          cp ${SRC_WALLPAPERS}/.gdmlock_def.jpg ${SRC_WALLPAPERS}/gdmlock.jpg
         else
-          cp $file ./wallpapers/gdmlock.jpg
+          cp $file ${SRC_WALLPAPERS}/gdmlock.jpg
         fi
       ;;
 
@@ -138,31 +189,48 @@ for env in ${!WALLS[@]}; do
 done
 
 info "copying wallpapers -> ${BWhite}${BGS_DIR}${NC}\\n"
-sudo mv ./wallpapers/gdmlock.jpg ./wallpapers/desktop.jpg ${BGS_DIR}
+sudo mv ${SRC_WALLPAPERS}/gdmlock.jpg ${SRC_WALLPAPERS}/desktop.jpg ${BGS_DIR}
 
 info "installing icons -> ${BWhite}${ICONS_DIR}${NC}\\n"
-mkdir -p ${ICONS_DIR} && cp -fr .icons/* ${ICONS_DIR}
+mkdir -p ${ICONS_DIR} && cp -fr ${SRC_ICONS}/* ${ICONS_DIR}
 
 info "installing apps theme -> ${BWhite}${THEME_DIR}${NC}\\n"
-mkdir -p ${THEME_DIR} && cp -fr .gtk/* ${THEME_DIR}
+mkdir -p ${THEME_DIR} && cp -fr ${SRC_GTK}/* ${THEME_DIR}
 
 info "installing schemes ...\\n"
 
-for SP in ${SCHMES_PATHS[@]}; do
+for SP in ${SCHEMES_PATHS[@]}; do
   if [ -e $SP ]; then
-    sudo cp -f .schemes/* $SP
+    sudo cp -f ${SRC_SCHEMES}/* $SP
   fi
 done
 
 info "installing shell theme -> ${BWhite}${GDM3_CSS}${NC}\\n"
-sudo cp -f .gdm/gnome-shell.css ${GDM3_CSS}
+sudo cp -f ${SRC_GDM}/gnome-shell.css ${GDM3_CSS}
+
+info "removing obsolete extensions ... \\n"
+
+for ext_name in ${OBSOLETE_EXTENSIONS[@]}; do
+
+  if [ -e ${EXTENSIONS_DIR}/$ext_name ]; then
+
+    gnome-shell-extension-tool -d $ext_name &> /dev/null
+
+    printf "${Red}removing: ${Purple}$ext_name${NC} ... \\n"
+    rm -rf ${EXTENSIONS_DIR}/$ext_name
+
+    sleep 0.2
+
+  fi
+
+done
 
 info "installing dependency extensions -> ${BWhite}${EXTENSIONS_DIR}${NC}\\n"
-mkdir -p ${EXTENSIONS_DIR} && cp -r .extensions/* ${EXTENSIONS_DIR}
+mkdir -p ${EXTENSIONS_DIR} && cp -r ${SRC_EXTENSIONS}/* ${EXTENSIONS_DIR}
 
 info "enabling extensions ... \\n"
-for ext_name in `ls .extensions/`
-do
+for ext_name in `ls ${SRC_EXTENSIONS}`; do
+
   printf "${Green}enabling: ${BPurple}$ext_name${NC} ... "
   gnome-shell-extension-tool -e $ext_name &> /dev/null
 
@@ -172,19 +240,20 @@ do
     printf "${Yellow}already enabled${NC}\\n"
   fi
 
+  sleep 0.2
+
 done
 
 info "resetting terminal preferences ...\\n"
 dconf reset -f /org/gnome/terminal/
 
 info "updating dconf database ...\\n"
-cat ./.dconf | dconf load /
+cat ${SRC}.dconf | dconf load /
 
 info "restarting shell ...\\n"
-_rshell # restart shell
+sleep 3 && _rshell # restart shell
 
 success "all done\\n"
-notify-send "Romi theme" "Theme was installed correctly"
 
 warn "a reboot is higly recommended ... do it now?"
 if [[ `prompt` -eq 1 ]]; then

@@ -3,7 +3,7 @@
 ## Note
 Romi theme **only supports** (by the moment) **Ubuntu 19.10 (Eoan Ermine)** and **Ubuntu 19.04 (Disco Dingo)**.
 
-## Last changes v1.3 | 02/11/2019 17:15
+## Last changes v1.3 | 02/11/2019 17:23
 `[NEW]`
 - Support for Ubuntu `19.10`.
 - Updated `dconf`.
@@ -19,7 +19,7 @@ Romi theme **only supports** (by the moment) **Ubuntu 19.10 (Eoan Ermine)** and 
 - Changed desktop extension to `desktop-icons@csoriano` to `ding@rastersoft.com`.
 
 `[INSTALLER]`
-- Improved isntaller stability
+- Improved installer stability
 - The installer now checks the OS version to avoid compatibility issues.
 - If you come from Ubuntu 19.04 (Disco Dingo), the installer will remove the obsolete extensions to avoid corruptions.
 

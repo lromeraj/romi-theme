@@ -16,7 +16,7 @@
 `[INSTALLER]`
 - Improved isntaller stability
 - The installer now checks the OS version to avoid compatibility issues.
-- If you come from Ubuntu 19.04, the installer will remove the obsolete extensions to avoid corruptions.
+- If you come from Ubuntu 19.04 (Disco Dingo), the installer will remove the obsolete extensions to avoid corruptions.
 
 `[FIXES]`
 - Now you can drag and drop from Desktop to Nautilus file manager.

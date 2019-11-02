@@ -1,7 +1,7 @@
 # Romi Theme
 
 ## Note
-Romi theme **only supports** (by the moment) **Ubuntu 19.04 (Disco Dingo)** and **Ubuntu 19.04 (Disco Dingo)**.
+Romi theme **only supports** (by the moment) **Ubuntu 19.10 (Eoan Ermine)** and **Ubuntu 19.04 (Disco Dingo)**.
 
 ## Install
 Romi theme comes with a dynamic installer that will make everything fast and easy.

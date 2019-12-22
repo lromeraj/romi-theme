@@ -164,23 +164,11 @@ for env in ${!WALLS[@]}; do
     case $env in
 
       desktop)
-        file=/usr/share/backgrounds/desktop.jpg
-        if [ ! -e $file ]; then
-          warn "$file was not found, copying default...\n"
-          cp ${SRC_WALLPAPERS}/.desktop_def.jpg ${SRC_WALLPAPERS}/desktop.jpg
-        else
-          cp $file ${SRC_WALLPAPERS}/desktop.jpg
-        fi
+        cp ${SRC_WALLPAPERS}/.desktop_def.jpg ${SRC_WALLPAPERS}/desktop.jpg
       ;;
 
       lock_screen)
-        file=/usr/share/backgrounds/gdmlock.jpg
-        if [ ! -e $file ]; then
-          warn "$file was not found, copying default...\n"
-          cp ${SRC_WALLPAPERS}/.gdmlock_def.jpg ${SRC_WALLPAPERS}/gdmlock.jpg
-        else
-          cp $file ${SRC_WALLPAPERS}/gdmlock.jpg
-        fi
+        cp ${SRC_WALLPAPERS}/.gdmlock_def.jpg ${SRC_WALLPAPERS}/gdmlock.jpg
       ;;
 
     esac

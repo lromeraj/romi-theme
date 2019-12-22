@@ -11,9 +11,12 @@
 - Updated all extensions to the latest version.
 
 `[THEME]`
+- New nature backgrounds.
 - Changed style of some decoration bars.
 - Changed selection color of desktop's icons.
 - Default desktop extension `desktop-icons@csoriano` was improved.
+
+
 
 ## v1.3
 `[NEW]`

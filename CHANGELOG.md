@@ -12,7 +12,7 @@
 
 `[THEME]`
 - Changed style of some decoration bars.
-- Changed selection color of the desktop's icons.
+- Changed selection color of desktop's icons.
 - Default desktop extension `desktop-icons@csoriano` was improved.
 
 ## v1.3

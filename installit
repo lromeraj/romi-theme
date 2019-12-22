@@ -199,13 +199,6 @@ sudo cp -f ${SRC_GDM}/gnome-shell.css ${GDM3_CSS}
 
 info "removing obsolete extensions ... \\n"
 
-
-### look for desktop native desktop extension
-DESKTOP_EXT_NAME=desktop-icons@csoriano
-if [ -e ${ROOT_EXTENSIONS_DIR}/${DESKTOP_EXT_NAME} ]; then
-  sudo mv ${ROOT_EXTENSIONS_DIR}/${DESKTOP_EXT_NAME} ${ROOT_EXTENSIONS_DIR}/${DESKTOP_EXT_NAME}.bak
-fi
-
 for ext_name in ${OBSOLETE_EXTENSIONS[@]}; do
 
   if [ -e ${EXTENSIONS_DIR}/$ext_name ]; then
@@ -228,13 +221,15 @@ info "installing dependency extensions -> ${BWhite}${EXTENSIONS_DIR}${NC}\\n"
 DESKTOP_EXT_NAME=desktop-icons@csoriano
 
 if [ -e ${ROOT_EXTENSIONS_DIR}/${DESKTOP_EXT_NAME} ]; then
-
   info "backing up default desktop extension ... \\n"
   sudo mv ${ROOT_EXTENSIONS_DIR}/${DESKTOP_EXT_NAME} ${ROOT_EXTENSIONS_DIR}/${DESKTOP_EXT_NAME}.bak &> /dev/null
 fi
 
 info "copying custom desktop extension ... \\n"
 sudo cp -r ${SRC_EXTENSIONS}/${DESKTOP_EXT_NAME} ${ROOT_EXTENSIONS_DIR}/
+
+### enable desktop special desktop extension
+gnome-extension enable ${DESKTOP_EXT_NAME}
 
 info "installing extensions ... \\n"
 

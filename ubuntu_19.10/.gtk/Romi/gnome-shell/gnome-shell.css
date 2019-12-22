@@ -1823,11 +1823,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: #fff;
 }
 
-#searchResultsBin {
-  max-width: 1000px;
-}
-
 #searchResultsContent {
+  max-width: 1000px;
   padding-left: 20px;
   padding-right: 20px;
   spacing: 16px;
@@ -2030,7 +2027,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .app-well-app-running-dot {
   width: 32px;
-  height: 2px;
+  height: 5px;
+  border-radius: 10px;
   background-color: #FFAC00;
   margin-bottom: 0;
 }
@@ -2041,7 +2039,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .show-apps .overview-icon,
 .grid-search-result .overview-icon {
   color: #fff;
-  border-radius: 100px;
+  border-radius: 20px;
   padding: 6px;
   border: none;
   transition-duration: 150ms;

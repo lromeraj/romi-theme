@@ -1741,10 +1741,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: #FFFFFF;
 }
 
-#searchResultsBin {
-  max-width: 1000px;
-}
-
 #searchResultsContent {
   padding-left: 20px;
   padding-right: 20px;
@@ -1959,8 +1955,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .show-apps .overview-icon,
 .grid-search-result .overview-icon {
   color: #FFFFFF;
-  border-radius: 100px;
-  padding: 6px;
+  border-radius: 99px;
+  padding: 5px;
   border: none;
   transition-duration: 150ms;
   text-align: center;

@@ -22,6 +22,7 @@ THEME_DIR=~/.themes
 ICONS_DIR=~/.icons
 GDM3_CSS=/etc/alternatives/gdm3.css
 EXTENSIONS_DIR=~/.local/share/gnome-shell/extensions
+ROOT_EXTENSIONS_DIR=/usr/share/gnome-shell/extensions/
 
 
 DEPS=( $( cat .deps ) ) # installer dependencies
@@ -210,14 +211,21 @@ sudo cp -f ${SRC_GDM}/gnome-shell.css ${GDM3_CSS}
 
 info "removing obsolete extensions ... \\n"
 
+
+### look for desktop native desktop extension
+DESKTOP_EXT_NAME=desktop-icons@csoriano
+if [ -e ${ROOT_EXTENSIONS_DIR}/${DESKTOP_EXT_NAME} ]; then
+  sudo mv ${ROOT_EXTENSIONS_DIR}/${DESKTOP_EXT_NAME} ${ROOT_EXTENSIONS_DIR}/${DESKTOP_EXT_NAME}.bak
+fi
+
 for ext_name in ${OBSOLETE_EXTENSIONS[@]}; do
 
   if [ -e ${EXTENSIONS_DIR}/$ext_name ]; then
 
-    gnome-shell-extension-tool -d $ext_name &> /dev/null
+    gnome-extensions disable $ext_name &> /dev/null
+    gnome-extensions uninstall $ext_name &> /dev/null
 
     printf "${Red}removing: ${Purple}$ext_name${NC} ... \\n"
-    rm -rf ${EXTENSIONS_DIR}/$ext_name
 
     sleep 0.2
 
@@ -226,13 +234,35 @@ for ext_name in ${OBSOLETE_EXTENSIONS[@]}; do
 done
 
 info "installing dependency extensions -> ${BWhite}${EXTENSIONS_DIR}${NC}\\n"
-mkdir -p ${EXTENSIONS_DIR} && cp -r ${SRC_EXTENSIONS}/* ${EXTENSIONS_DIR}
 
-info "enabling extensions ... \\n"
-for ext_name in `ls ${SRC_EXTENSIONS}`; do
+
+### copy special desktop extension
+DESKTOP_EXT_NAME=desktop-icons@csoriano
+
+if [ -e ${ROOT_EXTENSIONS_DIR}/${DESKTOP_EXT_NAME} ]; then
+
+  info "backing up default desktop extension ... \\n"
+  sudo mv ${ROOT_EXTENSIONS_DIR}/${DESKTOP_EXT_NAME} ${ROOT_EXTENSIONS_DIR}/${DESKTOP_EXT_NAME}.bak &> /dev/null
+fi
+
+info "copying custom desktop extension ... \\n"
+sudo cp -r ${SRC_EXTENSIONS}/${DESKTOP_EXT_NAME} ${ROOT_EXTENSIONS_DIR}/
+
+info "installing extensions ... \\n"
+
+for ext_name in `ls ${SRC_EXTENSIONS}/*.zip`; do
+
+  printf "${Purple}installing${NC}: $ext_name ... \\n"
+  gnome-extensions install $ext_name &> /dev/null
+
+  sleep 0.2
+
+done
+
+for ext_name in `ls ${EXTENSIONS_DIR}`; do
 
   printf "${Green}enabling: ${BPurple}$ext_name${NC} ... "
-  gnome-shell-extension-tool -e $ext_name &> /dev/null
+  gnome-extensions enable $ext_name &> /dev/null
 
   if [ $? -eq 0 ]; then
     printf "${Green}success${NC}\\n"

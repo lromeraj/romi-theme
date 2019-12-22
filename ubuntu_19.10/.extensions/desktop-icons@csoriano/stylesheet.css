@@ -1,0 +1,51 @@
+.file-item {
+    padding: 4px;
+    border: 0px;
+    margin: 1px;
+    border-radius: 15px;
+}
+
+.file-item:hover {
+   background-color: rgba(200, 200, 200, 0.3);
+}
+
+.file-item:selected {
+  background-color: rgba(255,255,255,0.3);
+}
+
+.name-label {
+    text-shadow: 0px 0px 5px 5px rgba(0,0,0,0.5);
+    color: white;
+    text-align: center;
+}
+
+.draggable {
+    background-color: red;
+}
+
+.rename-popup {
+    min-width: 300px;
+    margin: 6px;
+}
+
+.rename-popup .rename-popup-item {
+  spacing: 6px;
+}
+.rename-popup .rename-popup-item:ltr,
+.rename-popup .rename-popup-item:rtl {
+    padding: 0, 12px;
+}
+
+.create-folder-dialog-entry {
+    width: 20em;
+    margin-bottom: 6px;
+}
+
+.create-folder-dialog-label {
+    padding-bottom: .4em;
+}
+
+.create-folder-dialog-error-box {
+    padding-top: 16px;
+    spacing: 6px;
+}

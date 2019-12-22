@@ -83,7 +83,7 @@ cursor-foreground-color='rgb(55,73,91)'
 cursor-shape='block'
 font='Ubuntu Mono 12'
 foreground-color='rgb(255,255,255)'
-palette=['rgb(29,46,63)', 'rgb(255,85,85)', 'rgb(0,237,46)', 'rgb(255,153,0)', 'rgb(22,157,255)', 'rgb(196,87,255)', 'rgb(0,241,183)', 'rgb(255,255,255)', 'rgb(29,46,63)', 'rgb(255,85,85)', 'rgb(88,110,117)', 'rgb(101,123,131)', 'rgb(131,148,150)', 'rgb(108,113,196)', 'rgb(147,161,161)', 'rgb(255,255,255)']
+palette=['rgb(29,46,63)', 'rgb(255,85,85)', 'rgb(0,229,64)', 'rgb(255,122,0)', 'rgb(21,143,255)', 'rgb(255,0,159)', 'rgb(0,241,183)', 'rgb(255,255,255)', 'rgb(29,46,63)', 'rgb(255,85,85)', 'rgb(88,110,117)', 'rgb(101,123,131)', 'rgb(131,148,150)', 'rgb(108,113,196)', 'rgb(147,161,161)', 'rgb(255,255,255)']
 scroll-on-keystroke=true
 scroll-on-output=false
 scrollbar-policy='always'
@@ -92,6 +92,7 @@ use-theme-colors=false
 use-theme-transparency=false
 use-transparent-background=true
 visible-name='Romi'
+
 
 [org/gnome/terminal/legacy]
 schema-version=uint32 3

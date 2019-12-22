@@ -113,6 +113,11 @@ iconview {
   border-radius: 6px;
 }
 
+
+.file-item:selected {
+  background-color: #0092ed;
+}
+
 .rubberband,
 rubberband,
 flowbox rubberband,

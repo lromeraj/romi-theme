@@ -1,3 +1,20 @@
+## v1.4
+`[FIXES]`
+- Fixed a bug that was causing desktop overlapping.
+- Fixed theme styling that was hiding search results.
+
+`[INSTALLER]`
+- Improved extension management.
+- Installer will use now the new `gnome-extensions` manager.
+
+`[EXTENSIONS]`
+- Updated all extensions to the latest version.
+
+`[THEME]`
+- Changed style of some decoration bars.
+- Changed selection color of the desktop's icons.
+- Default desktop extension `desktop-icons@csoriano` was improved.
+
 ## v1.3
 `[NEW]`
 - Support for Ubuntu `19.10`.

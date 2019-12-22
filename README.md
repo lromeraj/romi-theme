@@ -3,31 +3,26 @@
 ## Note
 Romi theme **only supports** (by the moment) **Ubuntu 19.10 (Eoan Ermine)** and **Ubuntu 19.04 (Disco Dingo)**.
 
-## Last changes v1.3 | 02/11/2019 17:23
-`[NEW]`
-- Support for Ubuntu `19.10`.
-- Updated `dconf`.
-
-`[THEME]`
-- Improved terminal color contrast.
-
-`[ICONS]`
-- Updated `Numix` icons to the latest version.
-
-`[EXTENSIONS]`
-- Updated all extensions to the latest version to support Gnome `3.34`.
-- Changed desktop extension to `desktop-icons@csoriano` to `ding@rastersoft.com`.
+## Last changes v1.4 | 22/12/2019 20:30
+`[FIXES]`
+- Fixed a bug that was causing desktop overlapping.
+- Fixed theme styling that was hiding search results.
 
 `[INSTALLER]`
-- Improved installer stability
-- The installer now checks the OS version to avoid compatibility issues.
-- If you come from Ubuntu 19.04 (Disco Dingo), the installer will remove the obsolete extensions to avoid corruptions.
+- Improved extension management.
+- Installer will use now the new `gnome-extensions` manager.
 
-`[FIXES]`
-- Now you can drag and drop from Desktop to Nautilus file manager.
-- Fixed error that caused icons to not load properly.
+`[EXTENSIONS]`
+- Updated all extensions to the latest version.
+
+`[THEME]`
+- New nature backgrounds.
+- Changed style of some decoration bars.
+- Changed selection color of desktop's icons.
+- Default desktop extension `desktop-icons@csoriano` was improved.
 
 `[UPCOMING]`
+- Theming improvements.
 - Theme uninstaller.
 
 ## Install

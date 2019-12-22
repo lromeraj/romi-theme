@@ -229,7 +229,7 @@ info "copying custom desktop extension ... \\n"
 sudo cp -r ${SRC_EXTENSIONS}/${DESKTOP_EXT_NAME} ${ROOT_EXTENSIONS_DIR}/
 
 ### enable desktop special desktop extension
-gnome-extension enable ${DESKTOP_EXT_NAME}
+gnome-extensions enable ${DESKTOP_EXT_NAME}
 
 info "installing extensions ... \\n"
 
